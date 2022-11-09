@@ -2,11 +2,30 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const environment = {
-  port: process.env.PORT,
-  mongoDbUrl: process.env.MONGODB_URL,
-  mongoDbDebug: process.env.DEBUG,
-  jwtSecret: process.env.JWS_SECRET,
+const {
+  PORT: port,
+  DATABASE_URL: databaseUrl,
+  DATABASE_NAME: databaseName,
+  SECRET: secret,
+} = process.env;
+
+interface Environments {
+  port: number;
+  database: {
+    url: string;
+    name: string;
+  };
+  secret: string;
+}
+
+const enviroments: Environments = {
+  // eslint-disable-next-line no-implicit-coercion
+  port: +port,
+  database: {
+    url: databaseUrl,
+    name: databaseName,
+  },
+  secret,
 };
 
-export default environment;
+export default enviroments;
