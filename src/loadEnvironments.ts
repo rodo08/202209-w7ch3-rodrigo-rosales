@@ -7,6 +7,7 @@ const {
   DATABASE_URL: databaseUrl,
   DATABASE_NAME: databaseName,
   SECRET: secret,
+  DEBUG: debug,
 } = process.env;
 
 interface Environments {
@@ -16,9 +17,10 @@ interface Environments {
     name: string;
   };
   secret: string;
+  debug: string;
 }
 
-const enviroments: Environments = {
+const environments: Environments = {
   // eslint-disable-next-line no-implicit-coercion
   port: +port,
   database: {
@@ -26,6 +28,7 @@ const enviroments: Environments = {
     name: databaseName,
   },
   secret,
+  debug,
 };
 
-export default enviroments;
+export default environments;
