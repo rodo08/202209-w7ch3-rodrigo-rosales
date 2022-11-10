@@ -15,6 +15,7 @@ module.exports = {
           "interface",
         ],
         "@typescript-eslint/indent": "off",
+        "no-implicita-coercion": "off",
         "@typescript-eslint/no-empty-function": "off",
       },
     },
