@@ -1,7 +1,10 @@
 import chalk from "chalk";
-import debug from "debug";
-import app from "./app";
-import "../loadEnvironments";
+import debugCreator from "debug";
+import app from "./app.js";
+import "../loadEnvironments.js";
+import environments from "../loadEnvironments.js";
+
+const debug = debugCreator(environments.debug);
 
 const startServer = async (port: number) =>
   new Promise((resolve, reject) => {
