@@ -1,12 +1,12 @@
 import express from "express";
 import morgan from "morgan";
+import { generalError, notFoundError } from "./middlewares/error.js";
 
 const app = express();
-
 app.use(morgan("dev"));
-
 app.use(express.json());
 
-app.disable("x-powered-by");
+app.use(notFoundError);
+app.use(generalError);
 
 export default app;
