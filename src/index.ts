@@ -9,12 +9,3 @@ const {
 await startServer(port);
 
 await connectDb(url);
-
-/* Try {
-  await startServer(app, +port);
-  debug(chalk.green.bold(`Server listening on http://localhost:${port}`));
-  await connectDb(mongoDbUrl);
-  debug(chalk.green.bold("Connected to database"));
-} catch (error: unknown) {
-  debug(chalk.red.bold("Error starting the API: ", (error as Error).message));
-} */
