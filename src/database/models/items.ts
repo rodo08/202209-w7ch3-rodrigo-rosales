@@ -1,4 +1,5 @@
 import { model, Schema } from "mongoose";
+import type { InferSchemaType } from "mongoose";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const ItemSchema = new Schema({
@@ -14,6 +15,8 @@ const ItemSchema = new Schema({
     required: true,
   },
 });
+
+export type ItemStructure = InferSchemaType<typeof ItemSchema>;
 
 const Item = model("Item", ItemSchema, "items");
 
