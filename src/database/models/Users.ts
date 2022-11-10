@@ -11,11 +11,14 @@ const userSchema = new Schema({
     required: true,
     unique: true,
   },
-  pasword: {
+  password: {
     type: String,
     required: true,
     unique: true,
   },
 });
 
-export default userSchema;
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const User = model("User", userSchema, "user");
+
+export default User;

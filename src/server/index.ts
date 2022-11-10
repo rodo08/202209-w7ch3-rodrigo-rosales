@@ -1,7 +1,7 @@
+import "../loadEnvironments.js";
 import chalk from "chalk";
 import debugCreator from "debug";
 import app from "./app.js";
-import "../loadEnvironments.js";
 import environments from "../loadEnvironments.js";
 
 const debug = debugCreator(environments.debug);
