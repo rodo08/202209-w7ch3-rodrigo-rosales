@@ -1,6 +1,7 @@
 import { model, Schema } from "mongoose";
 
-const itemSchema = new Schema({
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const ItemSchema = new Schema({
   picture: {
     type: String,
   },
@@ -14,7 +15,6 @@ const itemSchema = new Schema({
   },
 });
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-const Item = model("Item", itemSchema, "items");
+const Item = model("Item", ItemSchema, "items");
 
 export default Item;
