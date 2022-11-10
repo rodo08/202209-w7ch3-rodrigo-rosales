@@ -1,8 +1,8 @@
 import type { NextFunction, Request, Response } from "express";
 import bcrypt from "bcryptjs";
-import CustomError from "../CustomError/CustomError";
-import type Credentials from "../server/types";
-import User from "../database/models/Users";
+import CustomError from "../CustomError/CustomError.js";
+import type Credentials from "../server/types.js";
+import User from "../database/models/Users.js";
 
 const loginUser = async (req: Request, res: Response, next: NextFunction) => {
   const { username, password } = req.body as Credentials;
